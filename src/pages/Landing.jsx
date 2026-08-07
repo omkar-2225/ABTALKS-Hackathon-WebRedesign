@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
 import QuoteDivider from "../components/QuoteDivider/QuoteDivider";
+import Stats from "../components/Stats/Stats";
 
 export default function Landing() {
   return (
@@ -15,6 +16,7 @@ export default function Landing() {
       <Navbar />
       <Hero />
       <QuoteDivider />
+      <Stats />
     </main>
   );
 }
