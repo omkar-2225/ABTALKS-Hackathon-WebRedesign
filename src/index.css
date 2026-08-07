@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#09090B;
+
+color:white;
+
+font-family:'Inter',sans-serif;
+
+overflow-x:hidden;
+
+}
+
+/* Purple Glow */
+
+.glow{
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:#7C3AED;
+
+filter:blur(180px);
+
+opacity:.28;
+
+border-radius:999px;
+
+}
+
+/* Container */
+
+.container-custom{
+
+max-width:1320px;
+
+margin:auto;
+
+padding-left:24px;
+
+padding-right:24px;
+
+}
