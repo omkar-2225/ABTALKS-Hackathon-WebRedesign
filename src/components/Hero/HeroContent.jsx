@@ -13,12 +13,12 @@ export default function HeroContent() {
         Build • Learn • Share
       </p>
 
-      <h1 className="text-white font-serif leading-[0.95] tracking-tight text-5xl sm:text-6xl lg:text-8xl">
-        Become the
+      <h1 className="text-white font-serif leading-[0.95] tracking-tight text-4xl sm:text-7xl lg:text-8xl">
+        You don't need
         <br />
-        developer
+        to know everything.
         <br />
-        recruiters notice.
+        <span className="text-purple-500">You just need to start.</span>
       </h1>
 
       <p className="mt-8 max-w-xl text-gray-400 text-lg leading-8">
