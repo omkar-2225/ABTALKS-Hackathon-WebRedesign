@@ -26,11 +26,11 @@ export default function ChallengeTracks() {
 
           <h2 className="mt-8 font-serif text-5xl text-white leading-tight lg:text-7xl">
 
-            Pick a track.
+            One challenge.
 
             <br />
 
-            Build every day.
+            Many paths.
 
           </h2>
 

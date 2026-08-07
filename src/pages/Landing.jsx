@@ -3,6 +3,7 @@ import Hero from "../components/Hero/Hero";
 import QuoteDivider from "../components/QuoteDivider/QuoteDivider";
 import Stats from "../components/Stats/Stats";
 import ChallengeTracks from "../components/ChallengeTracks/ChallengeTracks";
+import HowItWorks from "../components/HowItWorks/HowItWorks";
 
 export default function Landing() {
   return (
@@ -19,6 +20,7 @@ export default function Landing() {
       <QuoteDivider />
       <Stats />
       <ChallengeTracks />
+      <HowItWorks />
     </main>
   );
 }
