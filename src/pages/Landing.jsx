@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar/Navbar";
+import Hero from "../components/Hero/Hero";
 
 export default function Landing() {
   return (
@@ -11,9 +12,7 @@ export default function Landing() {
       <div className="glow bottom-[-250px] left-[-150px]" />
 
       <Navbar />
-
-      {/* Hero comes here */}
-
+      <Hero />
     </main>
   );
 }
