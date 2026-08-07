@@ -29,7 +29,7 @@ export default function Stats() {
             <h2 className="mt-8 font-serif text-5xl leading-tight text-white lg:text-6xl">
                 Not another coding platform.
                 <br />
-                <h3 className="text-[#7c3aed]">A daily proof of your growth.</h3>
+                <span className="text-[#7c3aed]">A daily proof of your growth.</span>
             </h2>
 
             <p className="mt-7 max-w-xl text-lg leading-9 text-gray-400">
