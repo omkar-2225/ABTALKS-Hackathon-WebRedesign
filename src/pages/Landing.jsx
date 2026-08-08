@@ -5,6 +5,7 @@ import Stats from "../components/Stats/Stats";
 import ChallengeTracks from "../components/ChallengeTracks/ChallengeTracks";
 import HowItWorks from "../components/HowItWorks/HowItWorks";
 import ChallengePreview from "../components/CHallengePreview/ChallengePreview";
+import JourneyCommunity from "../components/Journey/JourneyCommunity";
 
 export default function Landing() {
   return (
@@ -23,6 +24,7 @@ export default function Landing() {
       <ChallengeTracks />
       <HowItWorks />
       <ChallengePreview />
+      <JourneyCommunity />
     </main>
   );
 }
