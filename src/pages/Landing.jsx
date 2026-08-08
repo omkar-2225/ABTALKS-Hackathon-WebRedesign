@@ -4,6 +4,7 @@ import QuoteDivider from "../components/QuoteDivider/QuoteDivider";
 import Stats from "../components/Stats/Stats";
 import ChallengeTracks from "../components/ChallengeTracks/ChallengeTracks";
 import HowItWorks from "../components/HowItWorks/HowItWorks";
+import ChallengePreview from "../components/CHallengePreview/ChallengePreview";
 
 export default function Landing() {
   return (
@@ -21,6 +22,7 @@ export default function Landing() {
       <Stats />
       <ChallengeTracks />
       <HowItWorks />
+      <ChallengePreview />
     </main>
   );
 }
