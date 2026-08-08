@@ -41,23 +41,6 @@ export default function HeroContent() {
           Explore Tracks
         </button>
       </div>
-
-      <div className="mt-12 flex flex-wrap gap-10">
-        <div>
-          <h2 className="text-3xl font-bold text-white">20K+</h2>
-          <p className="text-gray-400">Students</p>
-        </div>
-
-        <div>
-          <h2 className="text-3xl font-bold text-white">1.8M</h2>
-          <p className="text-gray-400">GitHub Commits</p>
-        </div>
-
-        <div>
-          <h2 className="text-3xl font-bold text-white">60</h2>
-          <p className="text-gray-400">Challenge Days</p>
-        </div>
-      </div>
     </motion.div>
   );
 }

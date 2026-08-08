@@ -7,6 +7,7 @@ import HowItWorks from "../components/HowItWorks/HowItWorks";
 import ChallengePreview from "../components/CHallengePreview/ChallengePreview";
 import JourneyCommunity from "../components/Journey/JourneyCommunity";
 import FinalCTA from "../components/CTA/FinalCTA";
+import Footer from "../components/Footer/Footer";
 
 export default function Landing() {
   return (
@@ -19,14 +20,29 @@ export default function Landing() {
       <div className="glow bottom-[-250px] left-[-150px]" />
 
       <Navbar />
-      <Hero />
+
+      <section id="about" className="scroll">
+        <Hero />
+      </section>
       <QuoteDivider />
       <Stats />
-      <ChallengeTracks />
+
+      <section id="tracks" className="scroll">
+        <ChallengeTracks />
+      </section>
+
       <HowItWorks />
       <ChallengePreview />
-      <JourneyCommunity />
+
+      <section id="community" className="scroll">
+        <JourneyCommunity />
+      </section>
+
       <FinalCTA />
+
+      <section id="faq" className="scroll">
+        <Footer />
+      </section>
     </main>
   );
 }

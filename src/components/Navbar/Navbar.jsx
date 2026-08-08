@@ -3,10 +3,10 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "About", href: "#" },
-  { name: "Tracks", href: "#" },
-  { name: "Community", href: "#" },
-  { name: "FAQ", href: "#" },
+  { name: "About", href: "#about" },
+  { name: "Tracks", href: "#tracks" },
+  { name: "Community", href: "#community" },
+  { name: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
@@ -26,15 +26,12 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[#09090B]/80 backdrop-blur-xl border-b border-white/10"
-            : "bg-transparent"
-        }`}
+        className={`fixed rounded-full w-[85%] top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${scrolled ? "bg-[#09090B]/75 backdrop-blur-lg border border-white/10" : "bg-transparent"
+          }`}
       >
         <div className="container-custom">
 
-          <div className="flex items-center justify-between py-6">
+          <div className="flex items-center justify-between py-4">
 
             {/* Logo */}
 
