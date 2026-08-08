@@ -3,6 +3,7 @@ import mockStudent from "../data/mockStudent";
 import ChallengeBrief from "../pages/ChallengeBrief";
 import ChallengeRequirements from "./ChallengeRequirements";
 import ProofSubmission from "./ProofSubmission";
+import { Link } from "react-router-dom";
 
 export default function Challenge() {
   const student = mockStudent;
@@ -15,58 +16,58 @@ export default function Challenge() {
 
       <header className="fixed left-1/2 top-5 z-50 w-[92%] -translate-x-1/2 rounded-full border border-white/10 bg-gradient-to-r from-black/20 to-gray-800/20 backdrop-blur-xl">
 
-        <div className="mx-auto flex h-[72px] w-[92%] max-w-7xl items-center justify-between">
+        <div className="mx-auto flex h-16 w-full items-center justify-between px-4 sm:h-[72px] sm:px-6">
 
-          {/* Back */}
+      {/* Back */}
 
-          <a
-            href="/dashboard"
-            className="flex items-center gap-2 text-sm text-gray-400 transition hover:text-white"
-          >
-            <ArrowLeft size={17} />
-            Dashboard
-          </a>
+      <Link
+      to="/dashboard"
+      className="flex items-center gap-2 text-sm text-gray-400 transition hover:text-white"
+    >
+      <ArrowLeft size={17} />
+      Dashboard
+    </Link>
 
+    {/* Logo */}
 
-          {/* Logo */}
+    <div className="hidden items-center gap-2 sm:flex">
 
-          <div className="hidden items-center gap-2 sm:flex">
+      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-600 text-sm font-bold">
+        A
+      </div>
 
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-600 text-sm font-bold">
-              A
-            </div>
+      <span className="font-display text-lg font-semibold">
+        ABTalks
+      </span>
 
-            <span className="text-sm font-semibold">
-              ABTalks
-            </span>
+    </div>
 
-          </div>
+    {/* Streak */}
 
+    <div className="flex items-center gap-2 rounded-full border border-orange-400/10 bg-orange-400/[0.05] px-3 py-2">
 
-          {/* Streak */}
+      <Flame
+        size={16}
+        className="text-orange-400"
+        fill="currentColor"
+      />
 
-          <div className="flex items-center gap-2 rounded-full border border-orange-400/10 bg-orange-400/[0.05] px-3 py-2">
+      <span className="font-mono text-xs font-semibold text-gray-300 sm:text-sm">
+        {student.streak.current > 0
+          ? `${student.streak.current} day streak`
+          : "Start your streak"}
+      </span>
 
-            <Flame
-              size={15}
-              className="text-orange-400"
-              fill="currentColor"
-            />
+    </div>
 
-            <span className="text-xs text-gray-300">
-              {student.streak.current} day streak
-            </span>
+  </div>
 
-          </div>
-
-        </div>
-
-      </header>
+</header>
 
 
       {/* ================= MAIN ================= */}
 
-      <main className="mx-auto mt-15 w-[92%] max-w-5xl py-12 sm:py-16">
+      <main className="mx-auto w-[92%] max-w-5xl pb-20 pt-28 sm:pt-32">
 
         {/* ================= CHALLENGE META ================= */}
 
@@ -152,7 +153,7 @@ export default function Challenge() {
               href="#brief"
               className="inline-flex shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 text-sm font-medium shadow-[0_0_35px_rgba(124,58,237,.25)] transition hover:scale-[1.02]"
             >
-              Start challenge
+              View challenge
             </a>
 
           </div>
@@ -161,14 +162,19 @@ export default function Challenge() {
 
 
         {/* ================= BRIEF PLACEHOLDER ================= */}
-
-        <ChallengeBrief challenge={challenge} />
+        <div id="brief">
+          <ChallengeBrief challenge={challenge} />
+        </div>
 
         {/* requirements */}
-        <ChallengeRequirements challenge={challenge} />
+        <div id="requirements">
+          <ChallengeRequirements challenge={challenge} />
+        </div>
 
         {/* proof submission */}
-        <ProofSubmission />
+        <div id="proof-submission">
+          <ProofSubmission />
+        </div>
 
       </main>
 

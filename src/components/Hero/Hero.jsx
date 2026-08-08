@@ -55,7 +55,7 @@ export default function Hero() {
               </div>
 
               {/* Floating Card */}
-              <div className="absolute -top-6 -left-8 rounded-2xl border border-white/10 bg-[#181820] p-4 shadow-xl">
+              <div className="absolute -top-12 -left-3 rounded-2xl border border-white/10 bg-[#181820] p-4 shadow-xl">
                 <p className="text-xs text-gray-400">Current XP</p>
                 <h2 className="text-2xl font-bold text-white">1,240</h2>
               </div>

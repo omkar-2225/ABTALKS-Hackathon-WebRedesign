@@ -8,16 +8,12 @@ html{
 scroll-behavior:smooth;
 }
 
-body{
-
-background:#09090B;
-
-color:white;
-
-font-family:'Inter',sans-serif;
-
-overflow-x:hidden;
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #09090B;
 }
 
 /* Purple Glow */
