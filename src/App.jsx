@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
+import Challenge from "./pages/ChallengeDay";
 
 function App() {
   return (
@@ -16,10 +17,9 @@ function App() {
 
         {/* Challenge Day */}
         <Route
-          path="/day/12"
-          element={<div>Day 12 coming soon...</div>}
+          path="/day/:dayNumber"
+          element={<Challenge />}
         />
-
       </Routes>
     </BrowserRouter>
   );

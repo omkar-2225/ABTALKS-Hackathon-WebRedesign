@@ -60,33 +60,35 @@ const mockStudent = {
   // TODAY'S CHALLENGE
   // =========================
 
-  todayChallenge: {
-    day: 12,
+todayChallenge: {
+  day: 12,
 
-    title: "Build a Responsive Student Dashboard",
+  title: "Build a Student Dashboard",
 
-    description:
-      "Create a responsive dashboard that helps a student track their learning progress, daily tasks, and achievements.",
+  description:
+    "Create a responsive student dashboard that helps learners track their challenge progress.",
 
-    difficulty: "Intermediate",
+  difficulty: "Intermediate",
 
-    estimatedTime: "60 min",
+  skills: [
+    "React",
+    "Tailwind CSS",
+    "Responsive Design",
+  ],
 
-    category: "Frontend",
+  brief:
+    "Build a responsive student dashboard that makes progress visible and keeps the learner focused on completing their daily challenge.",
 
-    status: "not-started",
+  requirements: [
+    "Build a responsive dashboard",
+    "Create reusable React components",
+    "Display student progress and statistics",
+    "Add a 60-day activity tracker",
+    "Make the experience work on mobile",
+  ],
 
-    completed: false,
-
-    route: "/day/12",
-
-    skills: [
-      "React",
-      "Tailwind CSS",
-      "Responsive Design",
-      "Component Design",
-    ],
-  },
+  route: "/day/12",
+},
 
 
   // =========================

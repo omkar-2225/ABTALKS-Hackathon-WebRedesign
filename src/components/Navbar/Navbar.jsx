@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed rounded-full w-[85%] top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${scrolled ? "bg-[#09090B]/75 backdrop-blur-lg border border-white/10" : "bg-transparent"
+        className={`fixed rounded-full w-[92%] top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${scrolled ? "bg-[#09090B]/75 backdrop-blur-lg border border-white/10" : "bg-transparent"
           }`}
       >
         <div className="container-custom">
