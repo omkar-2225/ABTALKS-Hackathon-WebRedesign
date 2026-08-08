@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate,Link } from "react-router-dom";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -10,6 +11,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -26,7 +28,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed rounded-full w-[92%] top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${scrolled ? "bg-[#09090B]/75 backdrop-blur-lg border border-white/10" : "bg-transparent"
+        className={`fixed rounded-full w-[92%] top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${scrolled ? "bg-[#09090B]/10 backdrop-blur-lg border border-white/10" : "bg-transparent"
           }`}
       >
         <div className="container-custom">
@@ -45,7 +47,7 @@ export default function Navbar() {
 
               <div>
 
-                <h2 className="text-white text-lg font-semibold tracking-wide">
+                <h2 className="text-white text-lg font-mono font-bold tracking-wide">
 
                   ABTalks
 
@@ -81,13 +83,14 @@ export default function Navbar() {
 
             <div className="hidden lg:flex items-center gap-5">
 
-              <button className="text-gray-300 hover:text-white transition">
+              <button onClick={() => navigate("/login")} className="text-gray-300 hover:text-white transition">
 
                 Login
 
               </button>
 
               <motion.button
+                onClick={() => navigate("/dashboard")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: .95 }}
                 className="flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 font-medium shadow-[0_0_40px_rgba(124,58,237,.35)]"
@@ -120,40 +123,42 @@ export default function Navbar() {
 
         {menuOpen && (
 
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: .3 }}
-            className="fixed top-20 left-5 right-5 rounded-3xl bg-[#12121A] border border-white/10 backdrop-blur-xl z-40 lg:hidden p-6"
-          >
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.3 }}
+    className="fixed top-28 left-5 right-5 z-40 rounded-3xl border border-white/10 bg-[#12121A]/20 p-6 backdrop-blur-xl lg:hidden"
+  >
 
-            <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6">
 
-              {navLinks.map((item) => (
+      {navLinks.map((item) => (
 
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-lg text-gray-300 hover:text-white"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
+        <a
+          key={item.name}
+          href={item.href}
+          className="text-lg text-gray-300 hover:text-white"
+          onClick={() => setMenuOpen(false)}
+        >
+          {item.name}
+        </a>
 
-              ))}
+      ))}
 
-              <button className="mt-3 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 py-3 text-white font-semibold">
+      <Link
+        to="/login"
+        onClick={() => setMenuOpen(false)}
+        className="mt-3 block w-full rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 py-3 text-center font-semibold text-white"
+      >
+        Start Journey
+      </Link>
 
-                Start Journey
+    </div>
 
-              </button>
+  </motion.div>
 
-            </div>
-
-          </motion.div>
-
-        )}
+)}
 
       </AnimatePresence>
     </>

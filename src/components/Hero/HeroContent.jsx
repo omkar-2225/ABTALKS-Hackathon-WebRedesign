@@ -1,7 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroContent() {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -29,6 +31,7 @@ export default function HeroContent() {
 
       <div className="mt-10 flex flex-col sm:flex-row gap-4">
         <motion.button
+          onClick={() => navigate("/dashboard")}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
           className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-4 text-white font-semibold shadow-[0_0_50px_rgba(124,58,237,.35)] flex items-center justify-center gap-2"

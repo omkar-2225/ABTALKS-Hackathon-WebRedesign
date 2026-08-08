@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const benefits = [
   "60 days of building",
@@ -8,6 +9,7 @@ const benefits = [
 ];
 
 export default function FinalCTA() {
+  const navigate = useNavigate();
   return (
     <section className="relative overflow-hidden py-28 sm:py-36">
 
@@ -114,6 +116,7 @@ export default function FinalCTA() {
         >
 
           <button
+            onClick={() => navigate("/dashboard")}
             className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-semibold text-black shadow-xl shadow-violet-900/20 transition-all duration-300 hover:-translate-y-1 hover:bg-gray-100 sm:px-9 sm:py-5 sm:text-base"
           >
 
