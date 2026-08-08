@@ -15,10 +15,10 @@ export default function HowItWorks() {
         {/* Heading */}
 
         <motion.div
-          initial={{opacity:0,y:30}}
-          whileInView={{opacity:1,y:0}}
-          viewport={{once:true}}
-          transition={{duration:.7}}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: .7 }}
           className="max-w-3xl mx-auto text-center"
         >
 
@@ -32,7 +32,7 @@ export default function HowItWorks() {
 
             Four simple steps.
 
-            <br/>
+            <br />
 
             Sixty days of growth.
 
@@ -54,7 +54,7 @@ export default function HowItWorks() {
 
         <div className="hidden lg:block mt-24 relative">
 
-          <div className="absolute left-0 right-0 top-12 h-[2px] bg-gradient-to-r from-violet-600/20 via-violet-500 to-violet-600/20"/>
+          <div className="absolute left-0 right-0 top-12 h-[2px] bg-gradient-to-r from-violet-600/20 via-violet-500 to-violet-600/20" />
 
         </div>
 
@@ -62,8 +62,8 @@ export default function HowItWorks() {
 
         <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
-          {steps.map(step=>(
-            <StepCard key={step.id} {...step}/>
+          {steps.map(step => (
+            <StepCard key={step.id} {...step} />
           ))}
 
         </div>

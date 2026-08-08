@@ -4,8 +4,8 @@
 @import "tailwindcss";
 
 
-html{
-scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -18,34 +18,34 @@ body {
 
 /* Purple Glow */
 
-.glow{
+.glow {
 
-position:absolute;
+  position: absolute;
 
-width:500px;
+  width: 500px;
 
-height:500px;
+  height: 500px;
 
-background:#7C3AED;
+  background: #7C3AED;
 
-filter:blur(180px);
+  filter: blur(180px);
 
-opacity:.28;
+  opacity: .28;
 
-border-radius:999px;
+  border-radius: 999px;
 
 }
 
 /* Container */
 
-.container-custom{
+.container-custom {
 
-max-width:1320px;
+  max-width: 1320px;
 
-margin:auto;
+  margin: auto;
 
-padding-left:24px;
+  padding-left: 24px;
 
-padding-right:24px;
+  padding-right: 24px;
 
 }

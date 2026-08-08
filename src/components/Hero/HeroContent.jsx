@@ -31,7 +31,7 @@ export default function HeroContent() {
 
       <div className="mt-10 flex flex-col sm:flex-row gap-4">
         <motion.button
-          onClick={() => navigate("/dashboard")}
+          onClick={() => navigate("/login")}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
           className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-4 text-white font-semibold shadow-[0_0_50px_rgba(124,58,237,.35)] flex items-center justify-center gap-2"
@@ -40,7 +40,13 @@ export default function HeroContent() {
           <ArrowRight size={18} />
         </motion.button>
 
-        <button onClick={() => navigate("#track")} className="rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-8 py-4 text-white hover:bg-white/10 transition">
+        <button
+          onClick={() => {
+            const tracksSection = document.getElementById("tracks");
+            tracksSection?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-8 py-4 text-white hover:bg-white/10 transition"
+        >
           Explore Tracks
         </button>
       </div>

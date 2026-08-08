@@ -90,7 +90,7 @@ export default function Navbar() {
               </button>
 
               <motion.button
-                onClick={() => navigate("/dashboard")}
+                onClick={() => navigate("/login")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: .95 }}
                 className="flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 font-medium shadow-[0_0_40px_rgba(124,58,237,.35)]"
