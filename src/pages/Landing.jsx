@@ -6,6 +6,7 @@ import ChallengeTracks from "../components/ChallengeTracks/ChallengeTracks";
 import HowItWorks from "../components/HowItWorks/HowItWorks";
 import ChallengePreview from "../components/CHallengePreview/ChallengePreview";
 import JourneyCommunity from "../components/Journey/JourneyCommunity";
+import FinalCTA from "../components/CTA/FinalCTA";
 
 export default function Landing() {
   return (
@@ -25,6 +26,7 @@ export default function Landing() {
       <HowItWorks />
       <ChallengePreview />
       <JourneyCommunity />
+      <FinalCTA />
     </main>
   );
 }
