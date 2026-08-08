@@ -40,7 +40,7 @@ export default function HeroContent() {
           <ArrowRight size={18} />
         </motion.button>
 
-        <button className="rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-8 py-4 text-white hover:bg-white/10 transition">
+        <button onClick={() => navigate("#track")} className="rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-8 py-4 text-white hover:bg-white/10 transition">
           Explore Tracks
         </button>
       </div>
