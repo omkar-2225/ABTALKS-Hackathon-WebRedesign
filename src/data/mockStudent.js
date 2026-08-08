@@ -274,63 +274,79 @@ const mockStudent = {
   // =========================
 
   activity: [
-    {
-      day: 1,
-      completed: true,
-    },
-    {
-      day: 2,
-      completed: true,
-    },
-    {
-      day: 3,
-      completed: true,
-    },
-    {
-      day: 4,
-      completed: true,
-    },
-    {
-      day: 5,
-      completed: true,
-    },
-    {
-      day: 6,
-      completed: true,
-    },
-    {
-      day: 7,
-      completed: true,
-    },
-    {
-      day: 8,
-      completed: true,
-    },
-    {
-      day: 9,
-      completed: true,
-    },
-    {
-      day: 10,
-      completed: true,
-    },
-    {
-      day: 11,
-      completed: true,
-    },
-    {
-      day: 12,
-      completed: false,
-    },
-    {
-      day: 13,
-      completed: false,
-    },
-    {
-      day: 14,
-      completed: false,
-    },
-  ],
+  {
+    day: 1,
+    status: "completed",
+    title: "Build your developer profile",
+    xp: 50,
+  },
+  {
+    day: 2,
+    status: "completed",
+    title: "Create your first landing page",
+    xp: 50,
+  },
+  {
+    day: 3,
+    status: "proof",
+    title: "Build a responsive portfolio",
+    xp: 75,
+  },
+  {
+    day: 4,
+    status: "completed",
+    title: "JavaScript fundamentals",
+    xp: 50,
+  },
+  {
+    day: 5,
+    status: "proof",
+    title: "Build a React component",
+    xp: 75,
+  },
+  {
+    day: 6,
+    status: "completed",
+    title: "React state challenge",
+    xp: 50,
+  },
+  {
+    day: 7,
+    status: "completed",
+    title: "Build a mini project",
+    xp: 50,
+  },
+  {
+    day: 8,
+    status: "completed",
+    title: "API integration",
+    xp: 50,
+  },
+  {
+    day: 9,
+    status: "proof",
+    title: "Ship your project",
+    xp: 75,
+  },
+  {
+    day: 10,
+    status: "completed",
+    title: "GitHub workflow",
+    xp: 50,
+  },
+  {
+    day: 11,
+    status: "completed",
+    title: "Improve your project",
+    xp: 50,
+  },
+  {
+    day: 12,
+    status: "completed",
+    title: "Build a student dashboard",
+    xp: 50,
+  },
+],
 };
 
 export default mockStudent;

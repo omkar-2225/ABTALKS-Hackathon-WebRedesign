@@ -1,6 +1,7 @@
 import { Bell, Menu, X } from "lucide-react";
 import { useState } from "react";
 import mockStudent from "../data/mockStudent";
+import StreakTracker from "./StreakTracker";
 
 export default function Dashboard() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -311,7 +312,12 @@ export default function Dashboard() {
           </div>
 
         </section>
-
+        
+        {/* streak tracker */}
+        <StreakTracker
+          streak={student.streak}
+          activity={student.activity}
+        />
 
         {/* =====================================================
             TODAY'S CHALLENGE + PROGRESS
