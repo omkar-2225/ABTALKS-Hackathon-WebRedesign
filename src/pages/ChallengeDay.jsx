@@ -2,6 +2,7 @@ import { ArrowLeft, Clock, Flame } from "lucide-react";
 import mockStudent from "../data/mockStudent";
 import ChallengeBrief from "../pages/ChallengeBrief";
 import ChallengeRequirements from "./ChallengeRequirements";
+import ProofSubmission from "./ProofSubmission";
 
 export default function Challenge() {
   const student = mockStudent;
@@ -163,8 +164,11 @@ export default function Challenge() {
 
         <ChallengeBrief challenge={challenge} />
 
-          {/* requirements */}
+        {/* requirements */}
         <ChallengeRequirements challenge={challenge} />
+
+        {/* proof submission */}
+        <ProofSubmission />
 
       </main>
 
