@@ -17,34 +17,13 @@ An AI-powered 60-Day Challenge & Hackathon Platform built for **ABTalks**. Featu
 
 ---
 
-## 🗺️ Route Map & Application Flow
-
-```mermaid
-flowchart TD
-    A["🌐 Landing Page (/)"] -->|Click Login| B["🔐 Student Login (/login)"]
-    A -->|Explore Tracks| C["🎯 Challenge Tracks Section"]
-    B -->|Authenticate| D["📊 Student Dashboard (/dashboard)"]
-    D -->|Select Day| E["🚀 Challenge Day View (/day/:dayNumber)"]
-    E -->|Submit Build| F["✅ Proof of Submission"]
-    
-    subgraph Global Services
-        G["🤖 Floating AI Mentor Chatbot (Groq API)"]
-    end
-    
-    A -.-> G
-    D -.-> G
-    E -.-> G
-```
-
-### 📍 Route Directory
+## 🗺️ Route Map
 
 | Route | Page / Component | Description |
 | :--- | :--- | :--- |
-| `/` | [Landing.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/Landing.jsx) | Platform overview, stats, challenge tracks, how it works & CTA |
-| `/login` | [Login.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/Login.jsx) | Student login & authentication interface |
-| `/dashboard` | [Dashboard.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/Dashboard.jsx) | 60-day contribution heatmap, streak tracker & XP statistics |
-| `/day/:dayNumber` | [ChallengeDay.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/ChallengeDay.jsx) | Step-by-step challenge brief, requirements & proof submission |
-| `Global` | [Chatbot.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/components/ChatBot/Chatbot.jsx) | Floating AI Mentor assistant powered by Groq `llama-3.3-70b-versatile` |
+| `/` | [Landing.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/Landing.jsx) | Platform landing page, stats, challenge tracks & overview |
+| `/dashboard` | [Dashboard.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/Dashboard.jsx) | Student 60-day activity heatmap, streak tracker & progress |
+| `/day/12` | [ChallengeDay.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/ChallengeDay.jsx) | Daily challenge brief, objectives checklist & proof submission |
 
 ---
 
