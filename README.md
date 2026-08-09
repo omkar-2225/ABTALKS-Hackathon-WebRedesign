@@ -1,16 +1,62 @@
-# React + Vite
+# ABTalks Hackathon Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **ABTalks Hackathon** repository! This monorepo structure contains both the frontend UI and backend services for the ABTalks Hackathon web application.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📁 Repository Structure
 
-## React Compiler
+```text
+ABTalks-Hackathon/
+├── frontend/             # React (Vite) + TailwindCSS client application
+│   ├── public/           # Static assets
+│   ├── src/
+│   │   ├── assets/       # Media, images, icons, logo
+│   │   ├── components/   # Modular UI components (Navbar, Hero, Stats, Tracks, etc.)
+│   │   ├── pages/        # Main pages (Landing, Dashboard, ChallengeDay)
+│   │   ├── data/         # Mock data & datasets (tracks, students, challenges)
+│   │   ├── hooks/        # Custom React hooks
+│   │   ├── utils/        # Helper functions & utilities
+│   │   ├── App.jsx       # Root React component
+│   │   ├── main.jsx      # Entry point
+│   │   └── index.css     # Global styles & Tailwind directives
+│   ├── package.json
+│   ├── vite.config.js
+│   └── tailwind.config.js
+│
+├── backend/              # Node.js + Express API server (optional / API layer)
+│   ├── server.js         # Express server entry point
+│   ├── routes/           # Express API route handlers
+│   ├── models/           # Database / Data models
+│   └── package.json
+│
+├── README.md             # Project documentation
+└── .gitignore            # Git ignore configuration
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### 2. Backend Setup
+```bash
+cd backend
+npm install
+npm start
+```
+Runs the Express server on [http://localhost:5000](http://localhost:5000).
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19, Vite, Tailwind CSS, Lucide Icons
+- **Backend**: Node.js, Express, CORS, Dotenv
