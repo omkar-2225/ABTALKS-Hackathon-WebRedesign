@@ -4,7 +4,7 @@ import QuoteDivider from "../components/QuoteDivider/QuoteDivider";
 import Stats from "../components/Stats/Stats";
 import ChallengeTracks from "../components/ChallengeTracks/ChallengeTracks";
 import HowItWorks from "../components/HowItWorks/HowItWorks";
-import ChallengePreview from "../components/CHallengePreview/ChallengePreview";
+import ChallengePreview from "../components/ChallengePreview/ChallengePreview";
 import JourneyCommunity from "../components/Journey/JourneyCommunity";
 import FinalCTA from "../components/CTA/FinalCTA";
 import Footer from "../components/Footer/Footer";
