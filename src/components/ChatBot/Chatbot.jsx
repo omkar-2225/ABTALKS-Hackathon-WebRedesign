@@ -8,6 +8,7 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
+
 import mockStudent from "../../data/mockStudent";
 
 const QUICK_PROMPTS = [
@@ -36,6 +37,10 @@ const FALLBACK_RESPONSES = [
   "Don't aim for perfect code on the first attempt. Build something small, test it, and improve it incrementally.",
 
   "Take a short break if you're feeling overwhelmed. Come back with one tiny goal and keep moving forward. 💜",
+
+  "Stuck on something? Tell me exactly where you're blocked and we'll break it down together.",
+
+  "Your goal isn't perfect code. Your goal is to keep learning, building, and shipping. 🔥",
 ];
 
 export default function ChatBot() {
@@ -46,7 +51,7 @@ export default function ChatBot() {
     {
       id: 1,
       sender: "bot",
-      text: "Hey! 👋 I'm your ABTalks Buddy. What are you working on today?",
+      text: `Hey! 👋 I'm your ABTalks buddy.${mockStudent.name}, You're on Day ${mockStudent.challenge.currentDay} of your ${mockStudent.track} journey with a ${mockStudent.streak.current}-day streak. What do you need help with?`,
       timestamp: new Date(),
     },
   ]);
@@ -83,12 +88,21 @@ export default function ChatBot() {
   // =========================
 
   const handleSendMessage = async (textOrEvent) => {
-    if (textOrEvent && typeof textOrEvent.preventDefault === "function") {
+    // Allows both:
+    // handleSendMessage(event)
+    // handleSendMessage("some text")
+
+    if (
+      textOrEvent &&
+      typeof textOrEvent.preventDefault === "function"
+    ) {
       textOrEvent.preventDefault();
     }
 
     const textToSend =
-      typeof textOrEvent === "string" ? textOrEvent.trim() : inputValue.trim();
+      typeof textOrEvent === "string"
+        ? textOrEvent.trim()
+        : inputValue.trim();
 
     if (!textToSend || isLoading) return;
 
@@ -105,88 +119,91 @@ export default function ChatBot() {
 
     try {
       const student = mockStudent;
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-      let botText = "";
 
-      // 1. Try /api/chat backend endpoint if available
-      try {
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            message: textToSend,
-            studentName: student.name,
-            currentDay:
-              student.progress?.currentDay ||
-              student.currentDay ||
-              student.todayChallenge?.day ||
-              1,
-            streak: student.streak?.current || 0,
-            track: student.track || student.selectedTrack || "Full Stack",
-            challenge: student.todayChallenge || null,
-            achievements: student.achievements || [],
-          }),
-        });
+      const currentDay =
+        student?.progress?.currentDay ||
+        student?.currentDay ||
+        student?.todayChallenge?.day ||
+        1;
 
-        const contentType = response.headers.get("content-type");
-        if (
-          response.ok &&
-          contentType &&
-          contentType.includes("application/json")
-        ) {
-          const data = await response.json();
-          if (data && data.message) {
-            botText = data.message;
-          }
-        }
-      } catch (err) {
-        console.warn("Backend /api/chat unreachable, falling back to direct API:", err);
-      }
+      const streak =
+        student?.streak?.current ||
+        student?.streak ||
+        0;
 
-      // 2. If /api/chat returned no reply, call Gemini API directly if key is available
-      if (!botText && apiKey) {
+      const track =
+        student?.track ||
+        student?.selectedTrack ||
+        "Full Stack";
+
+      const studentContext = {
+        name: student?.name || "Student",
+        currentDay,
+        streak,
+        track,
+
+        achievements:
+          student?.achievements || [],
+
+        completedDays:
+          student?.activityLog ||
+          student?.completedDays ||
+          [],
+
+        challenge:
+          student?.todayChallenge || null,
+      };
+
+      // =========================
+      // CALL YOUR API
+      // =========================
+
+      const response = await fetch("http://localhost:3001/api/chat", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify({
+          message: textToSend,
+          student: studentContext,
+        }),
+      });
+
+      // =========================
+      // API ERROR
+      // =========================
+
+      if (!response.ok) {
+        let errorMessage = "Chat API request failed.";
+
         try {
-          const geminiRes = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                system_instruction: {
-                  parts: [
-                    {
-                      text: "You are ABTalks Buddy, a supportive AI mentor for students in a 60-day coding challenge. Keep responses short, encouraging, and helpful (2-4 sentences).",
-                    },
-                  ],
-                },
-                contents: [
-                  {
-                    role: "user",
-                    parts: [
-                      {
-                        text: `Student context: Name: ${student.name}, Track: ${student.track || "Full Stack"}, Day: ${student.progress?.currentDay || 1}. Student question: ${textToSend}`,
-                      },
-                    ],
-                  },
-                ],
-              }),
-            }
-          );
+          const errorData = await response.json();
 
-          if (geminiRes.ok) {
-            const geminiData = await geminiRes.json();
-            botText = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (errorData?.error) {
+            errorMessage = errorData.error;
           }
-        } catch (geminiErr) {
-          console.warn("Gemini API call failed:", geminiErr);
+        } catch {
+          // Ignore JSON parsing errors
         }
+
+        throw new Error(errorMessage);
       }
 
-      // 3. Fallback response
+      // =========================
+      // API RESPONSE
+      // =========================
+
+      const data = await response.json();
+
+      const botText =
+        data?.message ||
+        data?.text ||
+        data?.response;
+
       if (!botText) {
-        botText = getFallbackResponse();
+        throw new Error("Empty response from chat API.");
       }
 
       const botMessage = {
@@ -222,6 +239,7 @@ export default function ChatBot() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     handleSendMessage();
   };
 
@@ -232,7 +250,10 @@ export default function ChatBot() {
   if (!isOpen) {
     return (
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          setIsOpen(true);
+          setIsMinimized(false);
+        }}
         aria-label="Open ABTalks Buddy"
         className="
           fixed
@@ -406,8 +427,6 @@ export default function ChatBot() {
           py-4
         "
       >
-        {/* Ambient glow */}
-
         <div
           className="
             pointer-events-none
@@ -557,7 +576,6 @@ export default function ChatBot() {
                   : "justify-start"
               }`}
             >
-
               {message.sender === "bot" && (
                 <div
                   className="
@@ -615,7 +633,6 @@ export default function ChatBot() {
               >
                 {message.text}
               </div>
-
             </div>
           ))}
 
@@ -658,7 +675,9 @@ export default function ChatBot() {
                 "
               >
                 <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-gray-400" />
+
                 <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-gray-400 [animation-delay:200ms]" />
+
                 <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-gray-400 [animation-delay:400ms]" />
               </div>
 
@@ -740,7 +759,6 @@ export default function ChatBot() {
           p-4
         "
       >
-
         <form
           onSubmit={handleSubmit}
           className="
@@ -765,13 +783,10 @@ export default function ChatBot() {
             focus-within:shadow-[0_0_25px_rgba(139,92,246,0.08)]
           "
         >
-
           <input
             type="text"
             value={inputValue}
-            onChange={(e) =>
-              setInputValue(e.target.value)
-            }
+            onChange={(e) => setInputValue(e.target.value)}
             placeholder="Ask your buddy..."
             disabled={isLoading}
             className="
@@ -826,13 +841,11 @@ export default function ChatBot() {
           >
             <ArrowUp size={17} />
           </button>
-
         </form>
 
         <p className="mt-2 text-center text-sm text-gray-600">
-           Built for ABTalks students
+          Built for ABTalks students
         </p>
-
       </div>
     </div>
   );
