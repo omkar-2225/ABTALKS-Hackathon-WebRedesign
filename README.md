@@ -17,18 +17,34 @@ An AI-powered 60-Day Challenge & Hackathon Platform built for **ABTalks**. Featu
 
 ---
 
-## 📌 Problem Statement
+## 🗺️ Route Map & Application Flow
 
-In long-term coding challenges and hackathons (such as 60-day building sprints), participants frequently struggle with:
-1. **High Dropout Rates & Loss of Momentum**: Maintaining motivation across a 60-day challenge is difficult without clear visual progress feedback and daily streak tracking.
-2. **Lack of Instant Technical & Emotional Mentorship**: Students experience code blockers or mid-journey burnout when instant 24/7 guidance is unavailable.
-3. **Fragmented Submission & Tracking**: Absence of a unified hub to view daily challenge briefs, track completed milestones, and submit verifiable proof of work (GitHub repos, live demos, screenshots).
+```mermaid
+flowchart TD
+    A["🌐 Landing Page (/)"] -->|Click Login| B["🔐 Student Login (/login)"]
+    A -->|Explore Tracks| C["🎯 Challenge Tracks Section"]
+    B -->|Authenticate| D["📊 Student Dashboard (/dashboard)"]
+    D -->|Select Day| E["🚀 Challenge Day View (/day/:dayNumber)"]
+    E -->|Submit Build| F["✅ Proof of Submission"]
+    
+    subgraph Global Services
+        G["🤖 Floating AI Mentor Chatbot (Groq API)"]
+    end
+    
+    A -.-> G
+    D -.-> G
+    E -.-> G
+```
 
-### 💡 The Solution: ABTalks Hackathon Web Platform
-An all-in-one web application redesign featuring:
-- **Gamified 60-Day Streak Tracker & Activity Heatmap**: Visualizes daily contributions and rewards consistency with XP.
-- **Context-Aware AI Mentor Chatbot**: Powered by Groq's `llama-3.3-70b-versatile`, engineered with student psychology prompts to guide participants through every stage of the 60-day journey.
-- **Structured Tracks & Proof Submission Flow**: Simplifies track selection and proof verification.
+### 📍 Route Directory
+
+| Route | Page / Component | Description |
+| :--- | :--- | :--- |
+| `/` | [Landing.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/Landing.jsx) | Platform overview, stats, challenge tracks, how it works & CTA |
+| `/login` | [Login.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/Login.jsx) | Student login & authentication interface |
+| `/dashboard` | [Dashboard.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/Dashboard.jsx) | 60-day contribution heatmap, streak tracker & XP statistics |
+| `/day/:dayNumber` | [ChallengeDay.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/pages/ChallengeDay.jsx) | Step-by-step challenge brief, requirements & proof submission |
+| `Global` | [Chatbot.jsx](file:///c:/Users/omkar/OneDrive/Desktop/ABTALKS_HACKATHON/Frontend/src/components/ChatBot/Chatbot.jsx) | Floating AI Mentor assistant powered by Groq `llama-3.3-70b-versatile` |
 
 ---
 
