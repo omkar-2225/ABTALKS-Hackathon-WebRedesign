@@ -1,6 +1,12 @@
-# 🚀 ABTalks — Hackathon Web Redesign
+# 🚀 ABTalks Hackathon Web Redesign
 
 > A mobile-first redesign of **ABTalks**, a 60-day coding challenge platform designed to help college students build consistently, showcase their work, and turn daily progress into visible proof.
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://abtalks-hackathon-web-redesign-4f5a.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/omkar-2225/ABTALKS-Hackathon-WebRedesign)
+[![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-6.1-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
 ---
 
