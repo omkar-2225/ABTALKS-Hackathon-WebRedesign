@@ -282,24 +282,24 @@ Students without complete profile information are guided toward the next useful 
 
 ### Landing Page
 
-![ABTalks Landing Page](./Docs/Screenshots/Landing.jpeg)
+<img src="./Docs/Screenshots/Landing.jpeg" alt="ABTalks Landing Page" width="280" height="555"/>
 
 ### Login Page
-![ABTalks Login Page](./Docs/Screenshots/Login.jpeg)
+<img src="./Docs/Screenshots/Login.jpeg" alt="ABTalks Login Page" width="280" height="555"/>
 
 ### Student Dashboard
 
-![ABTalks Student Dashboard](./Docs/Screenshots/Dashboard.jpeg)
+<img src="./Docs/Screenshots/Dashboard.jpeg" alt="ABTalks Student Dashboard" width="280" height="555"/>
 
 ### Challenge Day
 
-![ABTalks Challenge Day](./Docs/Screenshots/Challenge.jpeg)
+<img src="./Docs/Screenshots/Challenge.jpeg" alt="ABTalks Challenge Day" width="280" height="555"/>
 
-### AI Mentor Page
-![ABTalks AI Mentor](./Docs/Screenshots/Chatbot.jpeg)
+### AI Mentor
+<img src="./Docs/Screenshots/Chatbot.jpeg" alt="ABTalks Chatbot" width="280" height="555"/>
 
 ### Proof of submission 
-![ABTalks Submission of proofs](./Docs/Screenshots/Submission.jpeg)
+<img src="./Docs/Screenshots/Submission.jpeg" alt="ABTalks Proof of submission" width="280" height="555"/>
 ---
 
 # 🛠️ Tech Stack
