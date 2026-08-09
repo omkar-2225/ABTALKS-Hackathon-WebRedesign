@@ -17,6 +17,21 @@ An AI-powered 60-Day Challenge & Hackathon Platform built for **ABTalks**. Featu
 
 ---
 
+## 📌 Problem Statement
+
+In long-term coding challenges and hackathons (such as 60-day building sprints), participants frequently struggle with:
+1. **High Dropout Rates & Loss of Momentum**: Maintaining motivation across a 60-day challenge is difficult without clear visual progress feedback and daily streak tracking.
+2. **Lack of Instant Technical & Emotional Mentorship**: Students experience code blockers or mid-journey burnout when instant 24/7 guidance is unavailable.
+3. **Fragmented Submission & Tracking**: Absence of a unified hub to view daily challenge briefs, track completed milestones, and submit verifiable proof of work (GitHub repos, live demos, screenshots).
+
+### 💡 The Solution: ABTalks Hackathon Web Platform
+An all-in-one web application redesign featuring:
+- **Gamified 60-Day Streak Tracker & Activity Heatmap**: Visualizes daily contributions and rewards consistency with XP.
+- **Context-Aware AI Mentor Chatbot**: Powered by Groq's `llama-3.3-70b-versatile`, engineered with student psychology prompts to guide participants through every stage of the 60-day journey.
+- **Structured Tracks & Proof Submission Flow**: Simplifies track selection and proof verification.
+
+---
+
 ## ✨ Key Features
 
 ### 🤖 1. AI-Powered Mentor Chatbot
