@@ -1,6 +1,19 @@
-# 💬 ChatGPT Prompts: ABTalks UI Design & Platform Architecture
+# ⚡ Vibe Coded with AI: ChatGPT & Antigravity Prompts
 
-This document contains the ChatGPT prompts and specifications used in designing and developing the **ABTalks 60-Day Hackathon Platform**.
+This project (**ABTalks 60-Day Challenge & Hackathon Platform**) was 100% **Vibe Coded** using AI prompts, leveraging ChatGPT and Google DeepMind's Antigravity AI assistant.
+
+[![ChatGPT Shared Conversation](https://img.shields.io/badge/ChatGPT-Shared%20Chat-10a37f?style=for-the-badge&logo=openai&logoColor=white)](https://chatgpt.com/share/6a783c54-8d2c-83e8-a32d-ab348f94c8c7)
+[![Vibe Coded Platform](https://img.shields.io/badge/Vibe%20Coded-with%20AI-purple?style=for-the-badge&logo=sparkles&logoColor=white)](https://abtalks-hackathon-web-redesign-4f5a.vercel.app)
+
+---
+
+## 🔗 Shared Chat Transcript
+- 💬 **ChatGPT Shared Conversation**: [https://chatgpt.com/share/6a783c54-8d2c-83e8-a32d-ab348f94c8c7](https://chatgpt.com/share/6a783c54-8d2c-83e8-a32d-ab348f94c8c7)
+
+---
+
+## 🎯 What is Vibe Coding?
+**Vibe Coding** is the modern approach of building complete full-stack applications through natural language prompts, architectural vision, and iterative AI pair programming. The entire UI/UX design, React component hierarchy, AI mentor integration, and Vercel deployment rules were built via AI prompting.
 
 ---
 
@@ -12,7 +25,7 @@ Design a modern, high-converting, and visually stunning web application for the 
 
 Requirements:
 1. Theme & Visual Style:
-   - Dark mode background (#09090B and #121217).
+   - Deep dark mode background (#09090B and #121217).
    - Glassmorphism cards with subtle glowing border accents (violet, orange, fuchsia).
    - Micro-animations using Framer Motion for scroll, hover, and component mounting.
 
@@ -59,3 +72,10 @@ Requirements:
 - Add vercel.json rewrite rules mapping all routes (/(.*)) to /index.html.
 - Add _redirects file in Frontend/public/ for static host fallbacks.
 ```
+
+---
+
+## 🚀 Highlights of Vibe Coding
+- ✨ **Prompt-Driven UI**: Glassmorphic dark theme engineered through prompts.
+- ⚡ **Zero-Config SPA Routing**: Automated Vercel rewrites & `_redirects` configuration.
+- 🧠 **Context-Aware AI Mentor**: Custom system prompts mapped to student mindset stages.
