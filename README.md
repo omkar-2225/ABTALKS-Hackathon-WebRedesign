@@ -282,16 +282,24 @@ Students without complete profile information are guided toward the next useful 
 
 ### Landing Page
 
-![ABTalks Landing Page](./docs/screenshots/landing.png)
+![ABTalks Landing Page](./Docs/Screenshots/Landing.jpeg)
+
+### Login Page
+![ABTalks Login Page](./Docs/Screenshots/Login.jpeg)
 
 ### Student Dashboard
 
-![ABTalks Student Dashboard](./docs/screenshots/dashboard.png)
+![ABTalks Student Dashboard](./Docs/Screenshots/Dashboard.jpeg)
 
 ### Challenge Day
 
-![ABTalks Challenge Day](./docs/screenshots/day-12.png)
+![ABTalks Challenge Day](./Docs/Screenshots/Challenge.jpeg)
 
+### AI Mentor Page
+![ABTalks AI Mentor](./Docs/Screenshots/Chatbot.jpeg)
+
+### Proof of submission 
+![ABTalks Submission of proofs](./Docs/Screenshots/Submission.jpeg)
 ---
 
 # 🛠️ Tech Stack
