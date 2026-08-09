@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       });
     }
 
-const getABTalksSystemPrompt = () => {
+const getABTalksSystemPrompt = (studentContext) => {
   const studentContext = {
     studentName: mockStudent.name,
     currentDay: mockStudent.challenge.currentDay,
@@ -80,7 +80,7 @@ If student asks for complete code, refuse briefly and switch to step-by-step gui
       : "";
 
   const psychologyPatterns = {
-    firstDay: isFirstDay
+    firstDay: studentContext.isFirstDay
       ? `\n=== FIRST DAY PSYCHOLOGY ===
 This student is starting their 60-day journey. They may feel:
 - Excitement mixed with doubt
@@ -99,7 +99,7 @@ EXACT TONE:
       : "",
 
     middleJourney:
-      streak > 5 && streak < 30
+      studentContext.streak > 5 && studentContext.streak < 30
         ? `\n=== MIDDLE JOURNEY (Days 6-29) PSYCHOLOGY ===
 This is the HARDEST phase. Student may feel:
 - Initial excitement fading
@@ -182,7 +182,7 @@ EXACT TONE:
       : "",
 
     nearEnd:
-      isNearEnd
+      studentContext.isNearEnd
         ? `\n=== LAST WEEK (Days 54-59) PSYCHOLOGY ===
 This student is in the final push. They feel:
 - Exhaustion and determination mix
