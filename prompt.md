@@ -10,6 +10,11 @@ This document contains the complete conversation transcript and prompts from the
 ## 🔗 Shared Chat Link
 - 🌐 **ChatGPT Share URL**: [https://chatgpt.com/share/6a783c54-8d2c-83e8-a32d-ab348f94c8c7](https://chatgpt.com/share/6a783c54-8d2c-83e8-a32d-ab348f94c8c7)
 
+- 🌐 **Claude Share URL**: [https://claude.ai/share/b3333250-6663-4e3b-bba0-727ad2993205](https://claude.ai/share/b3333250-6663-4e3b-bba0-727ad2993205)
+
+- 🌐 **Stitch Design URL**: [https://stitch.withgoogle.com/projects/9494504879255887284](https://stitch.withgoogle.com/projects/9494504879255887284)
+
+
 ---
 
 ## 📜 Full Conversation Transcript
