@@ -39,16 +39,7 @@ export default function HeroContent() {
           Start My Journey
           <ArrowRight size={18} />
         </motion.button>
-
-        <button
-          onClick={() => {
-            const tracksSection = document.getElementById("tracks");
-            tracksSection?.scrollIntoView({ behavior: "smooth" });
-          }}
-          className="rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-8 py-4 text-white hover:bg-white/10 transition"
-        >
-          Explore Tracks
-        </button>
+        
       </div>
     </motion.div>
   );

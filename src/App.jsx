@@ -4,10 +4,12 @@ import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
 import Challenge from "./pages/ChallengeDay";
 import Login from "./pages/Login";
+import ChatBot from "./components/ChatBot/Chatbot";
 
 function App() {
   return (
     <BrowserRouter>
+      <ChatBot />
       <Routes>
 
         {/* Landing Page */}
@@ -21,7 +23,7 @@ function App() {
 
         {/* Challenge Day */}
         <Route path="/day/:dayNumber" element={<Challenge />} />
-        
+
       </Routes>
     </BrowserRouter>
   );

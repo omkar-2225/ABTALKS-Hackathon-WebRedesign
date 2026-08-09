@@ -36,7 +36,7 @@ export default function TrackCard({
       <div className="mt-8 flex items-center justify-between">
         <span className="text-sm text-gray-500">{duration}</span>
 
-        <button onClick={() => navigate("/dashboard")} className="flex items-center gap-2 text-violet-400 group-hover:gap-3 transition-all">
+        <button onClick={() => navigate("/login")} className="flex items-center gap-2 text-violet-400 group-hover:gap-3 transition-all">
           Explore <ArrowRight size={18} />
         </button>
       </div>
